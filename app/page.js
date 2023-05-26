@@ -56,7 +56,7 @@ export default function Home() {
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <Image
           className="object-cover w-full h-full"
-          src={"/logo-3.jpg"}
+          src={"logo-3.jpg"}
           width={250}
           height={250}
           alt="Picture of a black airplane with hair"
