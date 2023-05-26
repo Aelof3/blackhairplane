@@ -18,7 +18,7 @@ export default function Home() {
   numbers.sort(() => Math.random() - 0.5)
    */
   // array of integers from 1 to 200
-  const numbers = Array.from({ length: 200 }, (_, i) => "/bh" + (i + 1) + ".jpeg")
+  const numbers = Array.from({ length: 200 }, (_, i) => "bh" + (i + 1) + ".jpeg")
 
   function getNumberArr(n, a=[]) {
     for (let i = 0; i < n; i++) {    
