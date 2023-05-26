@@ -71,6 +71,7 @@ export default function Home() {
               width={50}
               height={50}
               alt="Picture of a black airplane with hair"
+              blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGBgYGBgYGBgYGBgYGBgYGBgYGBgYHSggGBolHRgXITEhJSkrLi4uGB8zODMsNygtLisBC'
               placeholder='blur'
             />
           </div>
