@@ -71,6 +71,7 @@ export default function Home() {
               width={50}
               height={50}
               alt="Picture of a black airplane with hair"
+              placeholder='blur'
             />
           </div>
         ))}
