@@ -1,20 +1,11 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import React from 'react'
 
-export function BHLoader() {
-    const [customStyle, setCustomStyle] = useState({opacity: 0})
-
-    useEffect(() => {
-        setTimeout(() => {
-            setCustomStyle({
-                opacity: 1,
-            })
-        }, 2000)
-    }, [])
-
+export const BHLoader = ({ opacity }) => {
+    
     return (
-        <div className="fixed z-50 top-0 left-0 w-screen h-screen bg-black flex flex-col items-center justify-center transition-opacity"
-            style={customStyle}
+        <div className="fixed z-50 top-0 left-0 w-screen h-screen bg-black flex flex-col items-center justify-center transition-opacity duration-1000"
+            style={{opacity:opacity}}
         >
             <div className="flex flex-col justify-center items-center w-44 h-44 relative">
                 <div className="absolute pointer-events-none inset-0 w-44 h-44 border-8 border-x-yellow-400 border-y-red-600 animate-spin rounded-full"></div>
