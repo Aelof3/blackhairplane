@@ -8,13 +8,13 @@ export const BHImageGrid = () => {
     const imgSize = 50
     const len = Math.ceil(pageDimensions / 200)
 
-    // array of integers from 1 to 200
-    const numbers = Array.from({ length: 200 }, (_, i) => "bh" + (i + 1) + ".jpeg")
-
+    
     function getNumberArr(n, a=[]) {
         for (let i = 0; i < n; i++) {    
-        // randomize the order of the array
-        numbers.sort(() => Math.random() - 0.5)
+            // array of integers from 1 to 200
+            const numbers = Array.from({ length: 200 }, (_, i) => "bh" + (i + 1) + ".jpeg")
+            // randomize the order of the array
+            numbers.sort(() => Math.random() - 0.5)
             a.push(numbers)
         }
         return a.flat()
