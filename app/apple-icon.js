@@ -5,8 +5,8 @@ export const runtime = 'edge'
  
 // Image metadata
 export const size = {
-  width: 32,
-  height: 32,
+  width: 1024,
+  height: 576,
 }
 
 export const contentType = 'image/png'
@@ -18,10 +18,10 @@ export default function Icon() {
       // ImageResponse JSX element
       <Image
         style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-        src="logo-3.jpg"
+        src="apple-icon.png"
         alt="OG"
-        width={50}
-        height={50}
+        width={1024}
+        height={576}
       />
     ),
     // ImageResponse options
