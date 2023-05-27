@@ -6,8 +6,6 @@ export const BHImageGrid = () => {
     const [imgArr, setImgArr] = useState([])
 
     const imgSize = 50
-    const len = Math.ceil(pageDimensions / 200)
-
     
     function getNumberArr(n, a=[]) {
         for (let i = 0; i < n; i++) {    
@@ -22,8 +20,12 @@ export const BHImageGrid = () => {
     
     const handleResize = () => {
         const w = Math.ceil(window.innerWidth / imgSize)
-        const h = Math.ceil(window.innerHeight / imgSize) + 1
-        setPageDimensions(Math.ceil(w * h))
+        const h = Math.ceil(window.innerHeight / imgSize) + 5
+        const newPageDimensions = Math.ceil(w * h)
+        setPageDimensions(newPageDimensions)
+
+        const len = Math.ceil(newPageDimensions / 200)
+        setImgArr(getNumberArr(len))
     }
 
     useEffect(() => {
@@ -32,8 +34,6 @@ export const BHImageGrid = () => {
         window.addEventListener('resize', handleResize)
         
         handleResize()
-
-        setImgArr(getNumberArr(len))
 
         return () => {
             window.removeEventListener('resize', handleResize)
@@ -51,10 +51,11 @@ export const BHImageGrid = () => {
                     alt="Picture of a black airplane with hair"
                 />
             </div>
-            <div className="w-full h-full overflow-hidden grid grid-cols-[repeat(40,_minmax(0,_1fr))]">
+            <div className="w-[110%] h-[110%] overflow-hidden flex flex-wrap">
                 {imgArr.map((n,i) => (
-                    <div key={i+"-"+n+"-img"} className="opacity-50 overflow-hidden transition-all hover:scale-150 hover:opacity-100 hover:duration-0 hover:z-50 duration-1000 hover:rounded-sm">
-                        <Image
+                    <div key={i+"-"+n+"-img"} 
+                        className="opacity-50 w-[50px] h-[50px] overflow-hidden transition-all hover:scale-150 hover:opacity-100 hover:duration-0 hover:z-50 duration-1000 hover:rounded-sm">
+                        <img
                             className="object-cover w-full h-full"
                             src={n}
                             width={50}
